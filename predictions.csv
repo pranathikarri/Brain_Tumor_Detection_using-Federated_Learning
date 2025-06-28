@@ -1,0 +1,5 @@
+Image Name,Result,No Tumor Probability,Tumor Probability
+1 no.jpeg,✅ No Tumor detected.,0.9972,0.0028
+2 no.jpeg,✅ No Tumor detected.,0.9899,0.0101
+Y1.jpg,⚠️ Tumor detected.,0.0041,0.9959
+Y2.jpg,⚠️ Tumor detected.,0.0019,0.9981
