@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Brain Tumor Detection Result</title>
+
+  <!-- 💡 STYLE & TOGGLE BUTTON -->
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      transition: 0.4s;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .light-mode {
+      background-color: #ffffff;
+      color: black;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 38px;
+    }
+
+    .result-text {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .image-preview {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+    }
+
+    .button {
+      padding: 12px 25px;
+      background: #444;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      padding: 8px 14px;
+      border: none;
+      background: #333;
+      color: white;
+      border-radius: 5px;
+    }
+  </style>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light-mode");
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <h1>🧠 Brain Tumor Detection</h1>
+
+  <div class="result-text">
+    {{ result }}
+  </div>
+
+  <!-- IMAGE PREVIEW -->
+  <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Uploaded Image" class="image-preview">
+
+  <!-- Try another button -->
+  <div style="margin-top: 20px;">
+    <a href="/" class="button">📤 Try Another Image</a>
+  </div>
+
+  <!-- TOGGLE BUTTON -->
+  <button class="toggle-btn" onclick="toggleMode()">🌓 Toggle Mode</button>
+
+</body>
+</html>

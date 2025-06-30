@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brain Tumor Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+    }
+    .navbar {
+      background-color: #222;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar h1 {
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+    }
+    .navbar img {
+      height: 30px;
+    }
+    .nav-links a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .main-content {
+      text-align: center;
+      margin-top: 60px;
+    }
+    input[type="file"] {
+      padding: 12px;
+      background: #333;
+      color: white;
+      border-radius: 6px;
+      border: none;
+    }
+    .file-name {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #bbb;
+    }
+    .btn {
+      background-color: #0066ff;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .about-section {
+      margin-top: 60px;
+      padding: 30px;
+      background-color: #1e1e1e;
+      border-top: 2px solid #333;
+      text-align: center;
+    }
+    .about-section h2 {
+      margin-bottom: 10px;
+    }
+    .about-section p {
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #ccc;
+    }
+  </style>
+  <script>
+    function showFileName(input) {
+      const fileName = input.files[0] ? input.files[0].name : '';
+      document.getElementById("fileName").textContent = fileName;
+    }
+  </script>
+</head>
+<body>
+
+<div class="navbar">
+  <h1><img src="{{ url_for('static', filename='logo.jpg') }}"> Brain Tumor Detection</h1>
+  <div class="nav-links">
+    <a href="/login">Login</a>
+    <a href="/signup">Sign Up</a>
+  </div>
+</div>
+
+<div class="main-content">
+  <form method="POST" action="/predict" enctype="multipart/form-data">
+    <input type="file" name="file" onchange="showFileName(this)" required>
+    <div id="fileName" class="file-name"></div>
+    <button class="btn" type="submit">Predict</button>
+  </form>
+</div>
+
+<div class="about-section">
+  <h2>About This Project</h2>
+  <p>
+    This Brain Tumor Detection system uses deep learning techniques to analyze MRI images and classify them as tumor or no tumor.
+    It leverages Federated Learning to preserve privacy while ensuring high accuracy in medical image predictions.
+    Upload an MRI scan and let our AI-powered model detect tumor presence instantly!
+  </p>
+</div>
+
+</body>
+</html>

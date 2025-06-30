@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brain Tumor Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="left-side">
+    <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="logo">
+    <h2>NeuroDetect</h2>
+  </div>
+  <div class="nav-links">
+    <a href="/contact">Contact Us</a>
+    <a href="/signup">Sign Up</a>
+    <a href="/login">Login</a>
+  </div>
+</div>
+
+<!-- Title -->
+<div class="page-title">🧠 BRAIN TUMOR DETECTION</div>
+
+<!-- Upload Section -->
+<div class="upload-section">
+  <form method="POST" action="/predict" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".jpg,.jpeg" required><br>
+    <div class="note">⚠️ Note : Only MRI images in JPG or JPEG format are supported</div><br>
+    <button class="btn" type="submit">Predict</button>
+  </form>
+</div>
+
+<!-- About Section -->
+<div class="about-section">
+  <h2>About This Project :</h2>
+  <p>
+    Our <span class="highlight">Brain Tumor Detection System</span> uses advanced deep learning models to scan MRI images and detect tumors with high precision.
+    This project leverages <span class="highlight">Federated Learning</span> to ensure patient data privacy while still enabling collaborative model training.
+    The web app is intuitive, lightweight, and requires no medical expertise to operate.
+    It empowers healthcare professionals and researchers to rapidly assess MRI scans from anywhere.
+  </p>
+
+  <h2>Key Advantages :</h2>
+  <ul>
+    <li>🔒 <span class="highlight">Privacy-Preserving</span>: Uses federated learning to protect patient data.</li>
+    <li>⚡ <span class="highlight">Instant MRI Scan Predictions</span>: Classifies brain MRI images in under 2 seconds.</li>
+    <li>🎛️ <span class="highlight">Simple, Intuitive UI</span>: No technical skills needed to use the tool.</li>
+    <li>📈 <span class="highlight">High Accuracy & Reliability</span>: Trained with extensive brain tumor datasets.</li>
+    <li>🌐 <span class="highlight">Web-Based & Portable</span>: Use it from anywhere without installing complex software.</li>
+  </ul>
+</div>
+
+<div class="faq-teaser-section">
+  <h2>Frequently Asked Questions</h2>
+  <a href="/faq" class="faq-button">See All FAQs</a>
+</div>
+
+
+
+</body>
+</html>
